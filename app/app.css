@@ -1,0 +1,60 @@
+﻿
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
+
+Button.-primary {
+    font-size: 18;
+}
+
+ActionBar{
+    border-width: 1;
+    border-color: transparent;
+    android-elevation:0;
+}
+
+
+.flex{
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.buttonFlex{
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dialog{
+    border-radius: 15;
+    border-width: 1 0 1 0;
+    border-color: lightblue;
+    background-color: azure ;
+    width: 100%;
+    padding: 15;
+}
+
+.dialog-wrapper{
+    visibility: collapse;
+    opacity: 0;
+    border-radius: 15;
+}
+
+.dialogOpen .dialog-wrapper{
+    visibility: visible;
+    animation-name: showDialogWithAnimation;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+
+.dialogOpen .content {
+    opacity: 0.2;
+}
+
+@keyframes showDialogWithAnimation {
+    from {opacity: 0; }
+    to {opacity: 1; }
+}
+
+@keyframes closeDialogWithAnimation {
+    from {opacity: 1; }
+    to {opacity: 0; }
+}

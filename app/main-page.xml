@@ -1,0 +1,30 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:Lottie="nativescript-lottie" navigatingTo="onNavigatingTo" 
+class="{{ dialogShown ? 'dialogOpen' : 'page' }}"
+>
+
+    <ActionBar flat="true"> 
+    <Label text="Show Dialog Page" textWrap="true"/>
+    
+    </ActionBar>
+
+    <FlexboxLayout class="flex">
+        <StackLayout class="content p-20">
+            <Label text="Tap the button" class="h1 text-center"/>
+            <Button text="Reset Password" tap="{{ showDialog }}" class="-primary"/>
+        </StackLayout>
+        <AbsoluteLayout class="dialog-wrapper">
+            <StackLayout class="dialog">
+                <Label text="Reset Password" textWrap="true" class="h2 text-center"/>
+                <Lottie:LottieView src="sendmail.json" height="130" loop="true" autoPlay="true" loaded="yourLoadedEvent" />
+                <TextField hint="yourname@example.com" text="{{ }}" />
+                <FlexboxLayout class="buttonFlex">
+                    <Button class="cancelBtn" text="Cancel" tap="{{ closeDialog }}"/>
+                    <Button class="btn -primary" text="Send" tap="{{ send }}">
+                    </Button>
+                </FlexboxLayout>
+            </StackLayout>
+        </AbsoluteLayout>   
+    </FlexboxLayout>
+
+</Page>
